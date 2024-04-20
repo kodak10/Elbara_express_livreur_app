@@ -11,6 +11,8 @@ import '../../../features/map/presentation/screens/map_screen/map_screen.dart';
 import '../../../features/profile/presentation/screens/profile_screen/profile_screen.dart';
 import '../../../features/settings/presentation/screens/language_screen/language_screen.dart';
 import '../../../features/settings/presentation/screens/settings_screen/settings_screen.dart';
+import '../../../features/orders/presentation/screens/settings_screen/orders_screen.dart';
+
 import '../screens/no_internet_screen/no_internet_screen.dart';
 import '../screens/route_error_screen/route_error_screen.dart';
 import '../screens/splash_screen/splash_screen.dart';
@@ -28,6 +30,8 @@ part 'routes/home_shell_route.dart';
 part 'routes/home_branch_routes.dart';
 part 'routes/profile_branch_routes.dart';
 part 'routes/settings_branch_routes.dart';
+part 'routes/orders_branch_routes.dart';
+
 
 // This or other ShellRoutes keys can be used to display a child route on a different Navigator.
 // i.e: use the rootNavigatorKey for a child route inside a ShellRoute

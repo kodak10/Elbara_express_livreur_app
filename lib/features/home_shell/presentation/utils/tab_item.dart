@@ -7,7 +7,8 @@ import '../../../../core/presentation/widgets/platform_widgets/platform_icons.da
 enum TabItem {
   home,
   profile,
-  settings;
+  settings,
+  orders;
 
   const TabItem();
 
@@ -22,8 +23,9 @@ enum TabItem {
   IconData _getTabIconData(BuildContext context) {
     return switch (this) {
       TabItem.home => AppPlatformIcons.platformIcons(context).home,
-      TabItem.profile => AppPlatformIcons.platformIcons(context).accountCircleSolid,
+      TabItem.profile =>AppPlatformIcons.platformIcons(context).accountCircleSolid,
       TabItem.settings => AppPlatformIcons.platformIcons(context).settingsSolid,
+      TabItem.orders => AppPlatformIcons.platformIcons(context).wifiOff,
     };
   }
 
@@ -44,6 +46,7 @@ enum TabItem {
       TabItem.home => tr(context).home,
       TabItem.profile => tr(context).myProfile,
       TabItem.settings => tr(context).settings,
+      TabItem.orders => tr(context).orders,
     };
   }
 }

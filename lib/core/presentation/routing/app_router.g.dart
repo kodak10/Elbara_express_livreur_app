@@ -123,6 +123,15 @@ RouteBase get $homeShellRouteData => StatefulShellRouteData.$route(
             ),
           ],
         ),
+       StatefulShellBranchData.$branch(
+          restorationScopeId: OrdersBranchData.$restorationScopeId,
+          routes: [
+            GoRouteData.$route(
+              path: '/orders',
+              factory: $OrdersRouteExtension._fromState,
+            ),
+          ],
+        ),
       ],
     );
 
@@ -204,6 +213,23 @@ extension $LanguageRouteExtension on LanguageRoute {
 
   String get location => GoRouteData.$location(
         '/settings/language',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $OrdersRouteExtension on OrdersRoute {
+  static OrdersRoute _fromState(GoRouterState state) => const OrdersRoute();
+
+  String get location => GoRouteData.$location(
+        '/orders',
       );
 
   void go(BuildContext context) => context.go(location);

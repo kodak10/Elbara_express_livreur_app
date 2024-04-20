@@ -20,6 +20,8 @@ extension GoRouterStateX on GoRouterState {
       const HomeRoute().location,
       const ProfileRoute().location,
       const SettingsRoute().location,
+      const OrdersRoute().location,
+
     ];
     if (homeRoutes.any(routeLocation.startsWith)) {
       return defaultAuthority;

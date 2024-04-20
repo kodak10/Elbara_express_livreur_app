@@ -63,6 +63,18 @@ class HomeShellAppBar extends StatelessWidget {
       );
     }
 
+
+     /// Settings Orders
+    else if (location == const SettingsRoute().location) {
+      return CustomAppBar(
+        centerTitle: true,
+        title: AppBarWithIconComponent(
+          icon: MyAssets.ASSETS_ICONS_SCREENS_ICONS_SETTINGS_PNG,
+          title: tr(context).orders,
+        ),
+      );
+    }
+
     return const CustomAppBar();
   }
 }
