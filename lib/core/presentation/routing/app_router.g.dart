@@ -100,6 +100,15 @@ RouteBase get $homeShellRouteData => StatefulShellRouteData.$route(
           ],
         ),
         StatefulShellBranchData.$branch(
+          restorationScopeId: OrdersBranchData.$restorationScopeId,
+          routes: [
+            GoRouteData.$route(
+              path: '/orders',
+              factory: $OrdersRouteExtension._fromState,
+            ),
+          ],
+        ),
+        StatefulShellBranchData.$branch(
           restorationScopeId: ProfileBranchData.$restorationScopeId,
           routes: [
             GoRouteData.$route(
@@ -123,15 +132,7 @@ RouteBase get $homeShellRouteData => StatefulShellRouteData.$route(
             ),
           ],
         ),
-       StatefulShellBranchData.$branch(
-          restorationScopeId: OrdersBranchData.$restorationScopeId,
-          routes: [
-            GoRouteData.$route(
-              path: '/orders',
-              factory: $OrdersRouteExtension._fromState,
-            ),
-          ],
-        ),
+       
       ],
     );
 

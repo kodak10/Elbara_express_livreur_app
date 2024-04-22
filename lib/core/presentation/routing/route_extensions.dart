@@ -18,9 +18,9 @@ extension GoRouterStateX on GoRouterState {
 
     final homeRoutes = [
       const HomeRoute().location,
+      const OrdersRoute().location,
       const ProfileRoute().location,
       const SettingsRoute().location,
-      const OrdersRoute().location,
 
     ];
     if (homeRoutes.any(routeLocation.startsWith)) {

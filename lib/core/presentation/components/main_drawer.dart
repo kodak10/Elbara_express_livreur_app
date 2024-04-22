@@ -35,6 +35,14 @@ class MainDrawer extends ConsumerWidget {
                   height: Sizes.marginV28,
                 ),
                 DrawerItem(
+                  title: tr(context).orders,
+                  icon: MyAssets.ASSETS_ICONS_SCREENS_ICONS_ORDERS_PNG,
+                  onTap: () {
+                    scaffoldKey.currentState!.openEndDrawer();
+                    //_indexNotifier.state = 0;
+                  },
+                ),
+                 DrawerItem(
                   title: tr(context).myProfile,
                   icon: MyAssets.ASSETS_ICONS_SCREENS_ICONS_PROFILE_PNG,
                   onTap: () {

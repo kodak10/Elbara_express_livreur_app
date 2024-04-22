@@ -63,6 +63,9 @@ class MyAssets {
   static const String ASSETS_ICONS_SCREENS_ICONS_PROFILE_PNG =
       'assets/icons/screens_icons/profile.png';
 
+  static const String ASSETS_ICONS_SCREENS_ICONS_ORDERS_PNG =
+      'assets/icons/screens_icons/orders.png';
+
   /// ![preview](file:///Users/bx777/development/Flutter/Projects/deliverzler/assets/icons/screens_icons/settings.png)
   static const String ASSETS_ICONS_SCREENS_ICONS_SETTINGS_PNG =
       'assets/icons/screens_icons/settings.png';

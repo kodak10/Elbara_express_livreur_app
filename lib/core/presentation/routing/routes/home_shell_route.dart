@@ -5,15 +5,16 @@ part of '../app_router.dart';
     TypedStatefulShellBranch<HomeBranchData>(
       routes: HomeRoute.routes,
     ),
+    TypedStatefulShellBranch<OrdersBranchData>(
+      routes: OrdersRoute.routes,
+    ),
     TypedStatefulShellBranch<ProfileBranchData>(
       routes: ProfileRoute.routes,
     ),
     TypedStatefulShellBranch<SettingsBranchData>(
       routes: SettingsRoute.routes,
     ),
-    TypedStatefulShellBranch<OrdersBranchData>(
-      routes: OrdersRoute.routes,
-    ),
+    
   ],
 )
 class HomeShellRouteData extends StatefulShellRouteData {
@@ -49,7 +50,11 @@ class HomeBranchData extends StatefulShellBranchData {
 
   static const String $restorationScopeId = 'home_branch';
 }
+class OrdersBranchData extends StatefulShellBranchData {
+  const OrdersBranchData();
 
+  static const String $restorationScopeId = 'orders_branch';
+}
 class ProfileBranchData extends StatefulShellBranchData {
   const ProfileBranchData();
 
@@ -62,8 +67,4 @@ class SettingsBranchData extends StatefulShellBranchData {
   static const String $restorationScopeId = 'settings_branch';
 }
 
-class OrdersBranchData extends StatefulShellBranchData {
-  const OrdersBranchData();
 
-  static const String $restorationScopeId = 'orders_branch';
-}

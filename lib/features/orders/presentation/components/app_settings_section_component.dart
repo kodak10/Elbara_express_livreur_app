@@ -25,7 +25,7 @@ class AppSettingsSectionComponent extends ConsumerWidget {
       headerTitle: tr(context).appSettings,
       tileList: [
         CustomTileComponent(
-          title: tr(context).theme,
+          title: tr(context).orders,
           leadingIcon: currentTheme.settingsIcon,
           customTrailing: Container(
             constraints: const BoxConstraints(maxWidth: 40),

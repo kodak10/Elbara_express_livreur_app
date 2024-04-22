@@ -16,9 +16,9 @@ class Address with _$Address {
 
 @JsonEnum(valueField: 'jsonValue')
 enum PickupOption {
-  delivery('delivery'), //livraison
-  pickUp('pickUp'), //ramasser
-  diningRoom('diningRoom'); //salle à manger
+  delivery('delivery'),
+  pickUp('pickUp'),
+  diningRoom('diningRoom');
 
   const PickupOption(this.jsonValue);
 
@@ -27,11 +27,11 @@ enum PickupOption {
 
 @JsonEnum(valueField: 'jsonValue')
 enum DeliveryStatus {
-  pending('pending'), //en attente
-  upcoming('upcoming'), //A venir
-  onTheWay('onTheWay'), //en chemin
-  delivered('delivered'), //livré
-  canceled('canceled'); //annulé
+  pending('pending'),
+  upcoming('upcoming'),
+  onTheWay('onTheWay'),
+  delivered('delivered'),
+  canceled('canceled');
 
   const DeliveryStatus(this.jsonValue);
 
