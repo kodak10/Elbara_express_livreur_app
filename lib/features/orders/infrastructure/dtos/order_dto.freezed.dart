@@ -462,9 +462,7 @@ AddressDto _$AddressDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AddressDto {
-  String get state => throw _privateConstructorUsedError;
-  String get city => throw _privateConstructorUsedError;
-  String get street => throw _privateConstructorUsedError;
+  
   String get mobile => throw _privateConstructorUsedError;
   @GeoPointConverter()
   GeoPoint? get geoPoint => throw _privateConstructorUsedError;
@@ -481,9 +479,7 @@ abstract class $AddressDtoCopyWith<$Res> {
       _$AddressDtoCopyWithImpl<$Res, AddressDto>;
   @useResult
   $Res call(
-      {String state,
-      String city,
-      String street,
+      {
       String mobile,
       @GeoPointConverter() GeoPoint? geoPoint});
 }
@@ -501,25 +497,10 @@ class _$AddressDtoCopyWithImpl<$Res, $Val extends AddressDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = null,
-    Object? city = null,
-    Object? street = null,
     Object? mobile = null,
     Object? geoPoint = freezed,
   }) {
     return _then(_value.copyWith(
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String,
-      city: null == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      street: null == street
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as String,
       mobile: null == mobile
           ? _value.mobile
           : mobile // ignore: cast_nullable_to_non_nullable
@@ -541,9 +522,7 @@ abstract class _$$_AddressDtoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String state,
-      String city,
-      String street,
+      {
       String mobile,
       @GeoPointConverter() GeoPoint? geoPoint});
 }
@@ -559,25 +538,10 @@ class __$$_AddressDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? state = null,
-    Object? city = null,
-    Object? street = null,
     Object? mobile = null,
     Object? geoPoint = freezed,
   }) {
     return _then(_$_AddressDto(
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String,
-      city: null == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      street: null == street
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as String,
       mobile: null == mobile
           ? _value.mobile
           : mobile // ignore: cast_nullable_to_non_nullable
@@ -594,9 +558,7 @@ class __$$_AddressDtoCopyWithImpl<$Res>
 @JsonSerializable(createToJson: false)
 class _$_AddressDto extends _AddressDto {
   const _$_AddressDto(
-      {required this.state,
-      required this.city,
-      required this.street,
+      {
       required this.mobile,
       @GeoPointConverter() required this.geoPoint})
       : super._();
@@ -605,12 +567,6 @@ class _$_AddressDto extends _AddressDto {
       _$$_AddressDtoFromJson(json);
 
   @override
-  final String state;
-  @override
-  final String city;
-  @override
-  final String street;
-  @override
   final String mobile;
   @override
   @GeoPointConverter()
@@ -618,7 +574,7 @@ class _$_AddressDto extends _AddressDto {
 
   @override
   String toString() {
-    return 'AddressDto(state: $state, city: $city, street: $street, mobile: $mobile, geoPoint: $geoPoint)';
+    return 'AddressDto(mobile: $mobile, geoPoint: $geoPoint)';
   }
 
   @override
@@ -626,9 +582,6 @@ class _$_AddressDto extends _AddressDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AddressDto &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.city, city) || other.city == city) &&
-            (identical(other.street, street) || other.street == street) &&
             (identical(other.mobile, mobile) || other.mobile == mobile) &&
             (identical(other.geoPoint, geoPoint) ||
                 other.geoPoint == geoPoint));
@@ -637,7 +590,7 @@ class _$_AddressDto extends _AddressDto {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, state, city, street, mobile, geoPoint);
+      Object.hash(runtimeType, mobile, geoPoint);
 
   @JsonKey(ignore: true)
   @override
@@ -648,9 +601,7 @@ class _$_AddressDto extends _AddressDto {
 
 abstract class _AddressDto extends AddressDto {
   const factory _AddressDto(
-      {required final String state,
-      required final String city,
-      required final String street,
+      {
       required final String mobile,
       @GeoPointConverter() required final GeoPoint? geoPoint}) = _$_AddressDto;
   const _AddressDto._() : super._();
@@ -658,12 +609,6 @@ abstract class _AddressDto extends AddressDto {
   factory _AddressDto.fromJson(Map<String, dynamic> json) =
       _$_AddressDto.fromJson;
 
-  @override
-  String get state;
-  @override
-  String get city;
-  @override
-  String get street;
   @override
   String get mobile;
   @override

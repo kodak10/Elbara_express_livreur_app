@@ -120,10 +120,7 @@ class OrderDetailsDialog extends StatelessWidget {
                       : order.userName,
                   style: TextStyles.f16(context),
                 ),
-                Text(
-                  '${order.address!.state}, ${order.address!.city}, ${order.address!.street}',
-                  style: TextStyles.f16(context),
-                ),
+                
                 Text(
                   order.address!.mobile,
                   style: TextStyles.f16(context),

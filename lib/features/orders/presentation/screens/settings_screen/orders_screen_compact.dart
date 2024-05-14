@@ -13,8 +13,6 @@ class OrdersScreenCompact extends StatelessWidget {
     return NestedScreenScaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(
-          // vertical: Sizes.screenPaddingV20,
-          // horizontal: Sizes.screenPaddingH36,
           vertical: 0,
           horizontal: 0,
         ),

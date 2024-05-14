@@ -49,9 +49,9 @@ Value? _$JsonConverterFromJson<Json, Value>(
 
 _$_AddressDto _$$_AddressDtoFromJson(Map<String, dynamic> json) =>
     _$_AddressDto(
-      state: json['state'] as String,
-      city: json['city'] as String,
-      street: json['street'] as String,
+      // state: json['state'] as String,
+      // city: json['city'] as String,
+      // street: json['street'] as String,
       mobile: json['mobile'] as String,
       geoPoint: _$JsonConverterFromJson<GeoPoint, GeoPoint>(
           json['geoPoint'], const GeoPointConverter().fromJson),

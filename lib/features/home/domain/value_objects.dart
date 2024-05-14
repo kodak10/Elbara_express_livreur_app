@@ -6,9 +6,9 @@ part 'value_objects.freezed.dart';
 @freezed
 class Address with _$Address {
   const factory Address({
-    required String state,
-    required String city,
-    required String street,
+    //required String state,
+    //required String city,
+    //required String street,
     required String mobile,
     required GeoPoint? geoPoint,
   }) = _Address;

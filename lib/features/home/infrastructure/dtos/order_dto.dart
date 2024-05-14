@@ -83,9 +83,9 @@ class OrderDto with _$OrderDto {
 @Freezed(toJson: false)
 class AddressDto with _$AddressDto {
   const factory AddressDto({
-    required String state,
-    required String city,
-    required String street,
+    // required String state,
+    // required String city,
+    // required String street,
     required String mobile,
     @GeoPointConverter() required GeoPoint? geoPoint,
   }) = _AddressDto;
@@ -95,9 +95,9 @@ class AddressDto with _$AddressDto {
 
   factory AddressDto.fromDomain(Address address) {
     return AddressDto(
-      state: address.state,
-      city: address.city,
-      street: address.street,
+      // state: address.state,
+      // city: address.city,
+      // street: address.street,
       mobile: address.mobile,
       geoPoint: address.geoPoint,
     );
@@ -105,9 +105,9 @@ class AddressDto with _$AddressDto {
 
   Address toDomain() {
     return Address(
-      state: state,
-      city: city,
-      street: street,
+      // state: state,
+      // city: city,
+      // street: street,
       mobile: mobile,
       geoPoint: geoPoint,
     );

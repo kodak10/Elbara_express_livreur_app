@@ -14,7 +14,9 @@ List<AppOrder> myDeliveringOrders(MyDeliveringOrdersRef ref) {
       (orders) => orders.valueOrNull
           ?.where(
             (order) =>
-                order.deliveryId == userId && order.deliveryStatus == DeliveryStatus.onTheWay,
+                //order.deliveryId == userId && order.deliveryStatus == DeliveryStatus.onTheWay,
+                order.deliveryId == userId,
+
           )
           .toList(),
     ),

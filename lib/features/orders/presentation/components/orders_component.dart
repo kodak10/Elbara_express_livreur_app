@@ -33,7 +33,7 @@ class OrdersComponent extends ConsumerWidget {
       whenData: (state) {
         state.whenOrNull(
           success: (orderId, deliveryStatus) async {
-            if (deliveryStatus != DeliveryStatus.onTheWay) return;
+            if (deliveryStatus != DeliveryStatus.pending) return;
             ref.read(selectedOrderIdProvider.notifier).update((_) => Some(orderId));
             const MapRoute().go(context);
           },
