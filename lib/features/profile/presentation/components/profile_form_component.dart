@@ -19,14 +19,14 @@ class ProfileFormComponent extends HookConsumerWidget {
     final user = ref.watch(currentUserProvider);
 
     final profileFormKey = useMemoized(GlobalKey<FormState>.new);
-    final nameController = useTextEditingController(text: user.name ?? '');
-    final mobileController = useTextEditingController(text: user.phone ?? '');
+    final nameController = useTextEditingController(text: user.displayName ?? '');
+    final mobileController = useTextEditingController(text: user.phoneNumber ?? '');
 
     void updateProfile() {
       if (profileFormKey.currentState!.validate()) {
         final params = ProfileDetails(
-          name: nameController.text,
-          phone: mobileController.text,
+          displayName: nameController.text,
+          phoneNumber: mobileController.text,
         );
         ref.read(profileDetailsStateProvider.notifier).updateProfile(params);
       }

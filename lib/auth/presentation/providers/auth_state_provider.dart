@@ -25,10 +25,10 @@ class AuthState extends _$AuthState {
     );
   }
 
-  void updateUserImage(String imageUrl) {
+  void updateUserImage(String photoUrl) {
     final currentUser = state;
     if (currentUser is Some<User>) {
-      state = Some(currentUser.value.copyWith(image: imageUrl));
+      state = Some(currentUser.value.copyWith(photoUrl: photoUrl));
     }
   }
 }

@@ -18,9 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get image => throw _privateConstructorUsedError;
+  String? get displayName => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get photoUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -32,7 +32,7 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {String id, String email, String? name, String? phone, String? image});
+      {String id, String email, String? displayName, String? phoneNumber, String? photoUrl});
 }
 
 /// @nodoc
@@ -50,9 +50,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? id = null,
     Object? email = null,
-    Object? name = freezed,
-    Object? phone = freezed,
-    Object? image = freezed,
+    Object? displayName = freezed,
+    Object? phoneNumber = freezed,
+    Object? photoUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -63,17 +63,17 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      displayName: freezed == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
+      photoUrl: freezed == photoUrl
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -86,7 +86,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id, String email, String? name, String? phone, String? image});
+      {String id, String email, String? displayName, String? phoneNumber, String? photoUrl});
 }
 
 /// @nodoc
@@ -100,9 +100,9 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
   $Res call({
     Object? id = null,
     Object? email = null,
-    Object? name = freezed,
-    Object? phone = freezed,
-    Object? image = freezed,
+    Object? displayName = freezed,
+    Object? phoneNumber = freezed,
+    Object? photoUrl = freezed,
   }) {
     return _then(_$_User(
       id: null == id
@@ -113,17 +113,17 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      displayName: freezed == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
+      photoUrl: freezed == photoUrl
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -135,9 +135,9 @@ class _$_User extends _User {
   const _$_User(
       {required this.id,
       required this.email,
-      required this.name,
-      required this.phone,
-      required this.image})
+      required this.displayName,
+      required this.phoneNumber,
+      required this.photoUrl})
       : super._();
 
   @override
@@ -145,15 +145,15 @@ class _$_User extends _User {
   @override
   final String email;
   @override
-  final String? name;
+  final String? displayName;
   @override
-  final String? phone;
+  final String? phoneNumber;
   @override
-  final String? image;
+  final String? photoUrl;
 
   @override
   String toString() {
-    return 'User(id: $id, email: $email, name: $name, phone: $phone, image: $image)';
+    return 'User(id: $id, email: $email, name: $displayName, phone: $phoneNumber, image: $photoUrl)';
   }
 
   @override
@@ -163,13 +163,13 @@ class _$_User extends _User {
             other is _$_User &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.image, image) || other.image == image));
+            (identical(other.displayName, displayName) || other.displayName == displayName) &&
+            (identical(other.phoneNumber, phoneNumber) || other.phoneNumber == phoneNumber) &&
+            (identical(other.photoUrl, photoUrl) || other.photoUrl == photoUrl));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, email, name, phone, image);
+  int get hashCode => Object.hash(runtimeType, id, email, displayName, phoneNumber, photoUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -182,9 +182,9 @@ abstract class _User extends User {
   const factory _User(
       {required final String id,
       required final String email,
-      required final String? name,
-      required final String? phone,
-      required final String? image}) = _$_User;
+      required final String? displayName,
+      required final String? phoneNumber,
+      required final String? photoUrl}) = _$_User;
   const _User._() : super._();
 
   @override
@@ -192,11 +192,11 @@ abstract class _User extends User {
   @override
   String get email;
   @override
-  String? get name;
+  String? get displayName;
   @override
-  String? get phone;
+  String? get phoneNumber;
   @override
-  String? get image;
+  String? get photoUrl;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

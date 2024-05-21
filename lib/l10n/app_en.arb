@@ -96,7 +96,7 @@
   "deliver": "Livrer",
   "showMap": "Afficher la carte",
   "orderDetails": "Détails de la commande",
-  "id": "Identifiant",
+  "id": "Ref N°",
   "status": "Statut",
   "payment": "Paiement",
   "userDetails": "Détails de l'utilisateur",

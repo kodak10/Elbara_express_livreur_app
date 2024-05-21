@@ -65,21 +65,7 @@ class OrderDetailsDialog extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '${tr(context).status}:',
-                          style: TextStyles.f16(context),
-                        ),
-                        Flexible(
-                          child: Text(
-                            order.pickupOption.name,
-                            style: TextStyles.f16(context),
-                          ),
-                        ),
-                      ],
-                    ),
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

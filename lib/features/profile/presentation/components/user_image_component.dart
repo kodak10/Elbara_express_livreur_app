@@ -18,7 +18,7 @@ class UserImageComponent extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.easyListen(updateProfileImageStateProvider);
 
-    final userImage = ref.watch(currentUserProvider.select((user) => user.image));
+    final userImage = ref.watch(currentUserProvider.select((user) => user.photoUrl));
 
     void pickImage(PickSource pickSource, BuildContext ctx) {
       ref.read(pickProfileImageProvider(pickSource).future).then(

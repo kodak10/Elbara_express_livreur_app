@@ -9,16 +9,16 @@ class User with _$User {
   const factory User({
     required String id,
     required String email,
-    required String? name,
-    required String? phone,
-    required String? image,
+    required String? displayName,
+    required String? phoneNumber,
+    required String? photoUrl,
   }) = _User;
   const User._();
 
   User copyWithProfileDetails(ProfileDetails profileDetails) {
     return copyWith(
-      name: profileDetails.name,
-      phone: profileDetails.phone,
+      displayName: profileDetails.displayName,
+      phoneNumber: profileDetails.phoneNumber,
     );
   }
 

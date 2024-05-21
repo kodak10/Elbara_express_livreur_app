@@ -17,14 +17,14 @@ class MainDrawerUserInfoComponent extends ConsumerWidget {
     return Column(
       children: [
         CachedNetworkImageCircular(
-          imageUrl: userModel.image,
+          imageUrl: userModel.photoUrl,
           radius: 56,
         ),
         const SizedBox(
           height: Sizes.marginV6,
         ),
         Text(
-          userModel.name!.isEmpty ? 'User${userModel.id.substring(0, 6)}' : userModel.name!,
+          userModel.displayName!.isEmpty ? 'User${userModel.id.substring(0, 6)}' : userModel.displayName!,
           style: TextStyles.f18(context).copyWith(
             color: Theme.of(context).colorScheme.primary,
           ),

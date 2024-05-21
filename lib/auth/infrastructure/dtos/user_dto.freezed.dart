@@ -22,9 +22,9 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
 mixin _$UserDto {
   String get id => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get image => throw _privateConstructorUsedError;
+  String? get displayName => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get photoUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +37,7 @@ abstract class $UserDtoCopyWith<$Res> {
       _$UserDtoCopyWithImpl<$Res, UserDto>;
   @useResult
   $Res call(
-      {String id, String email, String? name, String? phone, String? image});
+      {String id, String email, String? displayName, String? phoneNumber, String? photoUrl});
 }
 
 /// @nodoc
@@ -55,9 +55,9 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
   $Res call({
     Object? id = null,
     Object? email = null,
-    Object? name = freezed,
-    Object? phone = freezed,
-    Object? image = freezed,
+    Object? displayName = freezed,
+    Object? phoneNumber = freezed,
+    Object? photoUrl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -68,17 +68,17 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      displayName: freezed == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
+      photoUrl: freezed == photoUrl
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -92,7 +92,7 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id, String email, String? name, String? phone, String? image});
+      {String id, String email, String? displayName, String? phoneNumber, String? photoUrl});
 }
 
 /// @nodoc
@@ -107,9 +107,9 @@ class __$$_UserDtoCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? email = null,
-    Object? name = freezed,
-    Object? phone = freezed,
-    Object? image = freezed,
+    Object? displayName = freezed,
+    Object? phoneNumber = freezed,
+    Object? photoUrl = freezed,
   }) {
     return _then(_$_UserDto(
       id: null == id
@@ -120,17 +120,17 @@ class __$$_UserDtoCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      displayName: freezed == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: freezed == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
+      photoUrl: freezed == photoUrl
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -142,9 +142,9 @@ class _$_UserDto extends _UserDto {
   const _$_UserDto(
       {required this.id,
       required this.email,
-      required this.name,
-      required this.phone,
-      required this.image})
+      required this.displayName,
+      required this.phoneNumber,
+      required this.photoUrl})
       : super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
@@ -155,15 +155,15 @@ class _$_UserDto extends _UserDto {
   @override
   final String email;
   @override
-  final String? name;
+  final String? displayName;
   @override
-  final String? phone;
+  final String? phoneNumber;
   @override
-  final String? image;
+  final String? photoUrl;
 
   @override
   String toString() {
-    return 'UserDto(id: $id, email: $email, name: $name, phone: $phone, image: $image)';
+    return 'UserDto(id: $id, email: $email, displayName: $displayName, phone: $phoneNumber, photoUrl: $photoUrl)';
   }
 
   @override
@@ -173,14 +173,14 @@ class _$_UserDto extends _UserDto {
             other is _$_UserDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.image, image) || other.image == image));
+            (identical(other.displayName, displayName) || other.displayName == displayName) &&
+            (identical(other.phoneNumber, phoneNumber) || other.phoneNumber == phoneNumber) &&
+            (identical(other.photoUrl, photoUrl) || other.photoUrl == photoUrl));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, email, name, phone, image);
+  int get hashCode => Object.hash(runtimeType, id, email, displayName, phoneNumber, photoUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -200,9 +200,9 @@ abstract class _UserDto extends UserDto {
   const factory _UserDto(
       {required final String id,
       required final String email,
-      required final String? name,
-      required final String? phone,
-      required final String? image}) = _$_UserDto;
+      required final String? displayName,
+      required final String? phoneNumber,
+      required final String? photoUrl}) = _$_UserDto;
   const _UserDto._() : super._();
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
@@ -212,11 +212,11 @@ abstract class _UserDto extends UserDto {
   @override
   String get email;
   @override
-  String? get name;
+  String? get displayName;
   @override
-  String? get phone;
+  String? get phoneNumber;
   @override
-  String? get image;
+  String? get photoUrl;
   @override
   @JsonKey(ignore: true)
   _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>

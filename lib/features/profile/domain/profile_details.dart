@@ -9,8 +9,8 @@ part 'profile_details.freezed.dart';
 @freezed
 class ProfileDetails with _$ProfileDetails {
   const factory ProfileDetails({
-    required String name,
-    required String phone,
+    required String displayName,
+    required String phoneNumber,
   }) = _UpdateProfileParams;
 
   static FormFieldValidator<String?> validateName(BuildContext context) =>

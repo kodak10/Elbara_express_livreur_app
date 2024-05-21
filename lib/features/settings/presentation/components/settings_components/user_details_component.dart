@@ -19,7 +19,7 @@ class UserDetailsComponent extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                user.name ?? 'User${user.id.substring(0, 6)}',
+                user.displayName ?? 'User${user.id.substring(0, 6)}',
                 style: TextStyles.f18(context).copyWith(fontWeight: FontStyles.fontWeightBold),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
@@ -37,7 +37,7 @@ class UserDetailsComponent extends ConsumerWidget {
           height: Sizes.marginV2,
         ),
         CachedNetworkImageCircular(
-          imageUrl: user.image,
+          imageUrl: user.photoUrl,
           radius: Sizes.imageR28,
         ),
       ],

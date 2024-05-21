@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ProfileDetailsDto {
-  String get name => throw _privateConstructorUsedError;
-  String get phone => throw _privateConstructorUsedError;
+  String get displayName => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -31,7 +31,7 @@ abstract class $ProfileDetailsDtoCopyWith<$Res> {
           ProfileDetailsDto value, $Res Function(ProfileDetailsDto) then) =
       _$ProfileDetailsDtoCopyWithImpl<$Res, ProfileDetailsDto>;
   @useResult
-  $Res call({String name, String phone});
+  $Res call({String displayName, String phoneNumber});
 }
 
 /// @nodoc
@@ -47,17 +47,17 @@ class _$ProfileDetailsDtoCopyWithImpl<$Res, $Val extends ProfileDetailsDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? phone = null,
+    Object? displayName = null,
+    Object? phoneNumber = null,
   }) {
     return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      displayName: null == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -71,7 +71,7 @@ abstract class _$$_ProfileDetailsDtoCopyWith<$Res>
       __$$_ProfileDetailsDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String phone});
+  $Res call({String displayName, String phoneNumber});
 }
 
 /// @nodoc
@@ -85,17 +85,17 @@ class __$$_ProfileDetailsDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? phone = null,
+    Object? displayName = null,
+    Object? phoneNumber = null,
   }) {
     return _then(_$_ProfileDetailsDto(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      displayName: null == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -104,16 +104,16 @@ class __$$_ProfileDetailsDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable(createFactory: false)
 class _$_ProfileDetailsDto implements _ProfileDetailsDto {
-  const _$_ProfileDetailsDto({required this.name, required this.phone});
+  const _$_ProfileDetailsDto({required this.displayName, required this.phoneNumber});
 
   @override
-  final String name;
+  final String displayName;
   @override
-  final String phone;
+  final String phoneNumber;
 
   @override
   String toString() {
-    return 'ProfileDetailsDto(name: $name, phone: $phone)';
+    return 'ProfileDetailsDto(name: $displayName, phone: $phoneNumber)';
   }
 
   @override
@@ -121,13 +121,13 @@ class _$_ProfileDetailsDto implements _ProfileDetailsDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProfileDetailsDto &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.phone, phone) || other.phone == phone));
+            (identical(other.displayName, displayName) || other.displayName == displayName) &&
+            (identical(other.phoneNumber, phoneNumber) || other.phoneNumber == phoneNumber));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, phone);
+  int get hashCode => Object.hash(runtimeType, displayName, phoneNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -146,13 +146,13 @@ class _$_ProfileDetailsDto implements _ProfileDetailsDto {
 
 abstract class _ProfileDetailsDto implements ProfileDetailsDto {
   const factory _ProfileDetailsDto(
-      {required final String name,
-      required final String phone}) = _$_ProfileDetailsDto;
+      {required final String displayName,
+      required final String phoneNumber}) = _$_ProfileDetailsDto;
 
   @override
-  String get name;
+  String get displayName;
   @override
-  String get phone;
+  String get phoneNumber;
   @override
   @JsonKey(ignore: true)
   _$$_ProfileDetailsDtoCopyWith<_$_ProfileDetailsDto> get copyWith =>

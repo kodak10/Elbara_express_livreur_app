@@ -14,9 +14,9 @@ class UserDto with _$UserDto {
   const factory UserDto({
     required String id,
     required String email,
-    required String? name,
-    required String? phone,
-    required String? image,
+    required String? displayName,
+    required String? phoneNumber,
+    required String? photoUrl,
   }) = _UserDto;
 
   const UserDto._();
@@ -27,9 +27,9 @@ class UserDto with _$UserDto {
     return UserDto(
       id: user.uid,
       email: user.email ?? '',
-      name: user.displayName?.split(' ').first ?? '',
-      phone: user.phoneNumber ?? '',
-      image: user.photoURL ?? '',
+      displayName: user.displayName?.split(' ').first ?? '',
+      phoneNumber: user.phoneNumber ?? '',
+      photoUrl: user.photoURL ?? '',
     );
   }
 
@@ -37,9 +37,9 @@ class UserDto with _$UserDto {
     return UserDto(
       id: user.id,
       email: user.email,
-      name: user.name,
-      phone: user.phone,
-      image: user.image,
+      displayName: user.displayName,
+      phoneNumber: user.phoneNumber,
+      photoUrl: user.photoUrl,
     );
   }
 
@@ -47,9 +47,9 @@ class UserDto with _$UserDto {
     return User(
       id: id,
       email: email,
-      name: name,
-      phone: phone,
-      image: image,
+      displayName: displayName,
+      phoneNumber: phoneNumber,
+      photoUrl: photoUrl,
     );
   }
 }

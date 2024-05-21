@@ -9,14 +9,14 @@ part 'profile_details_dto.g.dart';
 @Freezed(toJson: true)
 class ProfileDetailsDto with _$ProfileDetailsDto {
   const factory ProfileDetailsDto({
-    required String name,
-    required String phone,
+    required String displayName,
+    required String phoneNumber,
   }) = _ProfileDetailsDto;
 
   factory ProfileDetailsDto.fromDomain(ProfileDetails details) {
     return ProfileDetailsDto(
-      name: details.name,
-      phone: details.phone,
+      displayName: details.displayName,
+      phoneNumber: details.phoneNumber,
     );
   }
 }

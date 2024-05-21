@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ProfileDetails {
-  String get name => throw _privateConstructorUsedError;
-  String get phone => throw _privateConstructorUsedError;
+  String get displayName => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProfileDetailsCopyWith<ProfileDetails> get copyWith =>
@@ -30,7 +30,7 @@ abstract class $ProfileDetailsCopyWith<$Res> {
           ProfileDetails value, $Res Function(ProfileDetails) then) =
       _$ProfileDetailsCopyWithImpl<$Res, ProfileDetails>;
   @useResult
-  $Res call({String name, String phone});
+  $Res call({String displayName, String phoneNumber});
 }
 
 /// @nodoc
@@ -46,17 +46,17 @@ class _$ProfileDetailsCopyWithImpl<$Res, $Val extends ProfileDetails>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? phone = null,
+    Object? displayName = null,
+    Object? phoneNumber = null,
   }) {
     return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      displayName: null == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -70,7 +70,7 @@ abstract class _$$_UpdateProfileParamsCopyWith<$Res>
       __$$_UpdateProfileParamsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String phone});
+  $Res call({String displayName, String phoneNumber});
 }
 
 /// @nodoc
@@ -84,17 +84,17 @@ class __$$_UpdateProfileParamsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? phone = null,
+    Object? displayName = null,
+    Object? phoneNumber = null,
   }) {
     return _then(_$_UpdateProfileParams(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      displayName: null == displayName
+          ? _value.displayName
+          : displayName // ignore: cast_nullable_to_non_nullable
               as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -103,16 +103,16 @@ class __$$_UpdateProfileParamsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UpdateProfileParams implements _UpdateProfileParams {
-  const _$_UpdateProfileParams({required this.name, required this.phone});
+  const _$_UpdateProfileParams({required this.displayName, required this.phoneNumber});
 
   @override
-  final String name;
+  final String displayName;
   @override
-  final String phone;
+  final String phoneNumber;
 
   @override
   String toString() {
-    return 'ProfileDetails(name: $name, phone: $phone)';
+    return 'ProfileDetails(name: $displayName, phone: $phoneNumber)';
   }
 
   @override
@@ -120,12 +120,12 @@ class _$_UpdateProfileParams implements _UpdateProfileParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UpdateProfileParams &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.phone, phone) || other.phone == phone));
+            (identical(other.displayName, displayName) || other.displayName == displayName) &&
+            (identical(other.phoneNumber, phoneNumber) || other.phoneNumber == phoneNumber));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name, phone);
+  int get hashCode => Object.hash(runtimeType, displayName, phoneNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -137,13 +137,13 @@ class _$_UpdateProfileParams implements _UpdateProfileParams {
 
 abstract class _UpdateProfileParams implements ProfileDetails {
   const factory _UpdateProfileParams(
-      {required final String name,
-      required final String phone}) = _$_UpdateProfileParams;
+      {required final String displayName,
+      required final String phoneNumber}) = _$_UpdateProfileParams;
 
   @override
-  String get name;
+  String get displayName;
   @override
-  String get phone;
+  String get phoneNumber;
   @override
   @JsonKey(ignore: true)
   _$$_UpdateProfileParamsCopyWith<_$_UpdateProfileParams> get copyWith =>
