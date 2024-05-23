@@ -12,6 +12,7 @@ part 'order_dto.g.dart';
 @Freezed(toJson: false)
 class OrderDto with _$OrderDto {
   const factory OrderDto({
+    required String orderId,
     required int date,
     required PickupOption pickupOption,
     required String paymentMethod,
@@ -31,6 +32,7 @@ class OrderDto with _$OrderDto {
   factory OrderDto.fromDomain(AppOrder order) {
     return OrderDto(
       id: order.id,
+      orderId: order.orderId,
       date: order.date,
       pickupOption: order.pickupOption,
       paymentMethod: order.paymentMethod,
@@ -63,6 +65,7 @@ class OrderDto with _$OrderDto {
   AppOrder toDomain() {
     return AppOrder(
       id: id ?? '',
+      orderId: orderId,
       date: date,
       pickupOption: pickupOption,
       paymentMethod: paymentMethod,

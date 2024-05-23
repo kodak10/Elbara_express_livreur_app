@@ -21,6 +21,7 @@ OrderDto _$OrderDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrderDto {
   int get date => throw _privateConstructorUsedError;
+  String get orderId => throw _privateConstructorUsedError;
   PickupOption get pickupOption => throw _privateConstructorUsedError;
   String get paymentMethod => throw _privateConstructorUsedError;
   @JsonKey(name: 'addressModel')
@@ -50,6 +51,7 @@ abstract class $OrderDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {int date,
+      String orderId,
       PickupOption pickupOption,
       String paymentMethod,
       @JsonKey(name: 'addressModel') AddressDto? address,
@@ -81,6 +83,7 @@ class _$OrderDtoCopyWithImpl<$Res, $Val extends OrderDto>
   @override
   $Res call({
     Object? date = null,
+    Object? orderId = null,
     Object? pickupOption = null,
     Object? paymentMethod = null,
     Object? address = freezed,
@@ -100,6 +103,11 @@ class _$OrderDtoCopyWithImpl<$Res, $Val extends OrderDto>
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as int,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+
       pickupOption: null == pickupOption
           ? _value.pickupOption
           : pickupOption // ignore: cast_nullable_to_non_nullable
@@ -177,6 +185,7 @@ abstract class _$$_OrderDtoCopyWith<$Res> implements $OrderDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {int date,
+      String orderId,
       PickupOption pickupOption,
       String paymentMethod,
       @JsonKey(name: 'addressModel') AddressDto? address,
@@ -207,6 +216,7 @@ class __$$_OrderDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? date = null,
+    Object? orderId = null,
     Object? pickupOption = null,
     Object? paymentMethod = null,
     Object? address = freezed,
@@ -226,6 +236,11 @@ class __$$_OrderDtoCopyWithImpl<$Res>
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
               as int,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+
       pickupOption: null == pickupOption
           ? _value.pickupOption
           : pickupOption // ignore: cast_nullable_to_non_nullable
@@ -287,6 +302,7 @@ class __$$_OrderDtoCopyWithImpl<$Res>
 class _$_OrderDto extends _OrderDto {
   const _$_OrderDto(
       {required this.date,
+      required this.orderId,
       required this.pickupOption,
       required this.paymentMethod,
       @JsonKey(name: 'addressModel') required this.address,
@@ -307,6 +323,8 @@ class _$_OrderDto extends _OrderDto {
 
   @override
   final int date;
+  @override
+  final String orderId;
   @override
   final PickupOption pickupOption;
   @override
@@ -402,6 +420,7 @@ class _$_OrderDto extends _OrderDto {
 abstract class _OrderDto extends OrderDto {
   const factory _OrderDto(
       {required final int date,
+      required final String orderId,
       required final PickupOption pickupOption,
       required final String paymentMethod,
       @JsonKey(name: 'addressModel') required final AddressDto? address,
@@ -419,6 +438,8 @@ abstract class _OrderDto extends OrderDto {
 
   factory _OrderDto.fromJson(Map<String, dynamic> json) = _$_OrderDto.fromJson;
 
+  @override
+  String get orderId;
   @override
   int get date;
   @override

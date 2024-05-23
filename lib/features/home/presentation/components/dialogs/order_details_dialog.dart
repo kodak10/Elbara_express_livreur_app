@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:qr_flutter/qr_flutter.dart';
@@ -5,6 +8,9 @@ import 'package:qr_flutter/qr_flutter.dart';
 import '../../../../../core/presentation/helpers/localization_helper.dart';
 import '../../../../../core/presentation/styles/styles.dart';
 import '../../../domain/order.dart';
+import 'package:http/http.dart' as http;
+
+String? orderStatus = "";
 
 class OrderDetailsDialog extends StatelessWidget {
   const OrderDetailsDialog({
@@ -12,6 +18,45 @@ class OrderDetailsDialog extends StatelessWidget {
     super.key,
   });
   final AppOrder order;
+
+  void initState() {
+    fetchOrderStatus();
+  }
+
+  Future<void> fetchOrderStatus() async {
+    final url =
+        Uri.parse('https://app.paydunya.com/api/v1/dmp-api/check-status');
+    final headers = {
+      'Content-Type': 'application/json',
+      'PAYDUNYA-MASTER-KEY': 'fhRrUGWg-Upkg-0r3x-Z7DI-d8fR0aIHgxc2',
+      'PAYDUNYA-PRIVATE-KEY': 'live_private_tvQxERrcZFOVXgpi3NyUckcWDDL',
+      'PAYDUNYA-TOKEN': 'vI7BDJAJvpWDY8Y4rjBL',
+    };
+
+    final DocumentSnapshot snapshot = await FirebaseFirestore.instance
+        .collection("orders")
+        .doc(order.id) // Utilisation de l'ID de la commande pour obtenir le document
+        .get();
+
+    final String paymentRef =
+        snapshot.get('paymentRef'); // Extrait la valeur du champ paymentRef
+
+    final body = jsonEncode({'reference_number': paymentRef});
+
+    final response = await http.post(url, headers: headers, body: body);
+    if (response.statusCode == 200) {
+      final responseData = jsonDecode(response.body);
+      orderStatus = responseData['status'];
+
+      print('order: $orderStatus');
+      print('order: $order');
+
+    } else {
+      // Gérer les erreurs ici, par exemple afficher un message d'erreur à l'utilisateur
+      print(
+          'Erreur lors de la récupération du statut de la commande: ${response.statusCode}');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +67,19 @@ class OrderDetailsDialog extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '${tr(context).orderDetails}:',
+                style: TextStyles.f18SemiBold(context)
+                    .copyWith(decoration: TextDecoration.underline),
+              ),
+              const SizedBox(
+                height: Sizes.marginV8,
+              ),
+            ],
+          ),
           Row(
             children: [
               SizedBox(
@@ -41,14 +99,6 @@ class OrderDetailsDialog extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '${tr(context).orderDetails}:',
-                      style: TextStyles.f16SemiBold(context)
-                          .copyWith(decoration: TextDecoration.underline),
-                    ),
-                    const SizedBox(
-                      height: Sizes.marginV8,
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -58,22 +108,7 @@ class OrderDetailsDialog extends StatelessWidget {
                         ),
                         Flexible(
                           child: Text(
-                            '#${order.id.substring(0, 6)}',
-                            style: TextStyles.f16(context),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          '${tr(context).status}:',
-                          style: TextStyles.f16(context),
-                        ),
-                        Flexible(
-                          child: Text(
-                            order.pickupOption.name,
+                            '${order.orderId.substring(0, 6)}',
                             style: TextStyles.f16(context),
                           ),
                         ),
@@ -87,10 +122,26 @@ class OrderDetailsDialog extends StatelessWidget {
                           style: TextStyles.f16(context),
                         ),
                         Flexible(
-                          child: Text(
-                            order.paymentMethod,
-                            style: TextStyles.f16(context),
-                          ),
+                          child: orderStatus != null
+                              ? Text(
+                                  orderStatus == "canceled"
+                                      ? "Annulé"
+                                      : orderStatus == "pending"
+                                          ? "En attente"
+                                          : orderStatus == "completed"
+                                              ? "Payer"
+                                              : "Erreur",
+                                  style: TextStyle(
+                                    color: orderStatus == "canceled"
+                                        ? Colors.black38
+                                        : orderStatus == "pending"
+                                            ? Colors.deepOrange
+                                            : orderStatus == "completed"
+                                                ? Colors.deepPurpleAccent
+                                                : Colors.yellowAccent,
+                                  ),
+                                )
+                              : CircularProgressIndicator(),
                         ),
                       ],
                     ),
@@ -104,7 +155,8 @@ class OrderDetailsDialog extends StatelessWidget {
           ),
           Text(
             '${tr(context).userDetails}:',
-            style: TextStyles.f18SemiBold(context).copyWith(decoration: TextDecoration.underline),
+            style: TextStyles.f18SemiBold(context)
+                .copyWith(decoration: TextDecoration.underline),
           ),
           const SizedBox(
             height: Sizes.marginV2,
@@ -120,7 +172,6 @@ class OrderDetailsDialog extends StatelessWidget {
                       : order.userName,
                   style: TextStyles.f16(context),
                 ),
-                
                 Text(
                   order.address!.mobile,
                   style: TextStyles.f16(context),
@@ -133,7 +184,8 @@ class OrderDetailsDialog extends StatelessWidget {
           ),
           Text(
             '${tr(context).note}:',
-            style: TextStyles.f18SemiBold(context).copyWith(decoration: TextDecoration.underline),
+            style: TextStyles.f18SemiBold(context)
+                .copyWith(decoration: TextDecoration.underline),
           ),
           const SizedBox(
             height: Sizes.marginV2,

@@ -17,6 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AppOrder {
   String get id => throw _privateConstructorUsedError;
+  String get orderId => throw _privateConstructorUsedError;
+
   int get date => throw _privateConstructorUsedError;
   PickupOption get pickupOption => throw _privateConstructorUsedError;
   String get paymentMethod => throw _privateConstructorUsedError;
@@ -43,6 +45,7 @@ abstract class $AppOrderCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String orderId,
       int date,
       PickupOption pickupOption,
       String paymentMethod,
@@ -74,6 +77,7 @@ class _$AppOrderCopyWithImpl<$Res, $Val extends AppOrder>
   @override
   $Res call({
     Object? id = null,
+    Object? orderId = null,
     Object? date = null,
     Object? pickupOption = null,
     Object? paymentMethod = null,
@@ -93,6 +97,11 @@ class _$AppOrderCopyWithImpl<$Res, $Val extends AppOrder>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -170,6 +179,7 @@ abstract class _$$_AppOrderCopyWith<$Res> implements $AppOrderCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String orderId,
       int date,
       PickupOption pickupOption,
       String paymentMethod,
@@ -200,6 +210,7 @@ class __$$_AppOrderCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? orderId = null,
     Object? date = null,
     Object? pickupOption = null,
     Object? paymentMethod = null,
@@ -218,6 +229,10 @@ class __$$_AppOrderCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
               as String,
       date: null == date
           ? _value.date
@@ -280,6 +295,7 @@ class __$$_AppOrderCopyWithImpl<$Res>
 class _$_AppOrder extends _AppOrder {
   const _$_AppOrder(
       {required this.id,
+      required this.orderId,
       required this.date,
       required this.pickupOption,
       required this.paymentMethod,
@@ -297,6 +313,8 @@ class _$_AppOrder extends _AppOrder {
 
   @override
   final String id;
+   @override
+  final String orderId;
   @override
   final int date;
   @override
@@ -326,7 +344,7 @@ class _$_AppOrder extends _AppOrder {
 
   @override
   String toString() {
-    return 'AppOrder(id: $id, date: $date, pickupOption: $pickupOption, paymentMethod: $paymentMethod, address: $address, userId: $userId, userName: $userName, userImage: $userImage, userPhone: $userPhone, userNote: $userNote, employeeCancelNote: $employeeCancelNote, deliveryStatus: $deliveryStatus, deliveryId: $deliveryId, deliveryGeoPoint: $deliveryGeoPoint)';
+    return 'AppOrder(id: $id,orderId: $orderId, date: $date, pickupOption: $pickupOption, paymentMethod: $paymentMethod, address: $address, userId: $userId, userName: $userName, userImage: $userImage, userPhone: $userPhone, userNote: $userNote, employeeCancelNote: $employeeCancelNote, deliveryStatus: $deliveryStatus, deliveryId: $deliveryId, deliveryGeoPoint: $deliveryGeoPoint)';
   }
 
   @JsonKey(ignore: true)
@@ -336,9 +354,12 @@ class _$_AppOrder extends _AppOrder {
       __$$_AppOrderCopyWithImpl<_$_AppOrder>(this, _$identity);
 }
 
+
+
 abstract class _AppOrder extends AppOrder {
   const factory _AppOrder(
       {required final String id,
+      required final String orderId,
       required final int date,
       required final PickupOption pickupOption,
       required final String paymentMethod,

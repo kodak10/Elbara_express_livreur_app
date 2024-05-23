@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../auth/presentation/providers/auth_state_provider.dart';
@@ -17,6 +20,9 @@ import 'card_button_component.dart';
 import 'card_details_button_component.dart';
 import 'card_order_details_component.dart';
 import 'card_user_details_component.dart';
+import 'package:http/http.dart' as http;
+
+String? orderStatus = "";
 
 class CardItemComponent extends ConsumerWidget {
   const CardItemComponent({
@@ -43,7 +49,9 @@ class CardItemComponent extends ConsumerWidget {
 
       switch (authority) {
         case (canProceed: true, isLoading: false):
-          ref.read(selectedOrderIdProvider.notifier).update((_) => Some(order.id));
+          ref
+              .read(selectedOrderIdProvider.notifier)
+              .update((_) => Some(order.id));
           const MapRoute().go(context);
         case (canProceed: false, isLoading: false):
           OrderDialogs.showCanNotProceedDialog(context);
@@ -67,7 +75,9 @@ class CardItemComponent extends ConsumerWidget {
                   orderId: order.id,
                   deliveryStatus: DeliveryStatus.delivered,
                 );
-                ref.read(updateDeliveryStatusControllerProvider.notifier).updateStatus(params);
+                ref
+                    .read(updateDeliveryStatusControllerProvider.notifier)
+                    .updateStatus(params);
               }
             },
           );
@@ -93,7 +103,9 @@ class CardItemComponent extends ConsumerWidget {
               deliveryStatus: DeliveryStatus.onTheWay,
               deliveryId: userId,
             );
-            await ref.read(updateDeliveryStatusControllerProvider.notifier).updateStatus(params);
+            await ref
+                .read(updateDeliveryStatusControllerProvider.notifier)
+                .updateStatus(params);
           }
         case _:
           return;
@@ -113,7 +125,9 @@ class CardItemComponent extends ConsumerWidget {
                   deliveryStatus: DeliveryStatus.canceled,
                   employeeCancelNote: cancelNote,
                 );
-                ref.read(updateDeliveryStatusControllerProvider.notifier).updateStatus(params);
+                ref
+                    .read(updateDeliveryStatusControllerProvider.notifier)
+                    .updateStatus(params);
               }
             },
           );
@@ -123,6 +137,8 @@ class CardItemComponent extends ConsumerWidget {
           return;
       }
     }
+
+    
 
     return Card(
       elevation: 6,

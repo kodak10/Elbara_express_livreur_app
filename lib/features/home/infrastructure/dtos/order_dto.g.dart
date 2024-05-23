@@ -8,6 +8,7 @@ part of 'order_dto.dart';
 
 _$_OrderDto _$$_OrderDtoFromJson(Map<String, dynamic> json) => _$_OrderDto(
       date: json['date'] as int,
+      orderId: json['orderId'] as String,
       pickupOption: $enumDecode(_$PickupOptionEnumMap, json['pickupOption']),
       paymentMethod: json['paymentMethod'] as String,
       address: json['addressModel'] == null
