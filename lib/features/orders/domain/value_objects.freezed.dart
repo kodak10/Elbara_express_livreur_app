@@ -16,6 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Address {
+  // String get state => throw _privateConstructorUsedError;
+  // String get city => throw _privateConstructorUsedError;
+  // String get street => throw _privateConstructorUsedError;
   String get mobile => throw _privateConstructorUsedError;
   GeoPoint? get geoPoint => throw _privateConstructorUsedError;
 
@@ -29,7 +32,11 @@ abstract class $AddressCopyWith<$Res> {
       _$AddressCopyWithImpl<$Res, Address>;
   @useResult
   $Res call(
-      {String mobile,
+      {
+      // String state,
+      // String city,
+      // String street,
+      String mobile,
       GeoPoint? geoPoint});
 }
 
@@ -46,10 +53,25 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    // Object? state = null,
+    // Object? city = null,
+    // Object? street = null,
     Object? mobile = null,
     Object? geoPoint = freezed,
   }) {
     return _then(_value.copyWith(
+      // state: null == state
+      //     ? _value.state
+      //     : state // ignore: cast_nullable_to_non_nullable
+      //         as String,
+      // city: null == city
+      //     ? _value.city
+      //     : city // ignore: cast_nullable_to_non_nullable
+      //         as String,
+      // street: null == street
+      //     ? _value.street
+      //     : street // ignore: cast_nullable_to_non_nullable
+      //         as String,
       mobile: null == mobile
           ? _value.mobile
           : mobile // ignore: cast_nullable_to_non_nullable
@@ -71,6 +93,9 @@ abstract class _$$_AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
   @useResult
   $Res call(
       {
+      // String state,
+      // String city,
+      // String street,
       String mobile,
       GeoPoint? geoPoint});
 }
@@ -85,10 +110,25 @@ class __$$_AddressCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    // Object? state = null,
+    // Object? city = null,
+    // Object? street = null,
     Object? mobile = null,
     Object? geoPoint = freezed,
   }) {
     return _then(_$_Address(
+      // state: null == state
+      //     ? _value.state
+      //     : state // ignore: cast_nullable_to_non_nullable
+      //         as String,
+      // city: null == city
+      //     ? _value.city
+      //     : city // ignore: cast_nullable_to_non_nullable
+      //         as String,
+      // street: null == street
+      //     ? _value.street
+      //     : street // ignore: cast_nullable_to_non_nullable
+      //         as String,
       mobile: null == mobile
           ? _value.mobile
           : mobile // ignore: cast_nullable_to_non_nullable
@@ -106,9 +146,18 @@ class __$$_AddressCopyWithImpl<$Res>
 class _$_Address implements _Address {
   const _$_Address(
       {
+      //required this.state,
+      //required this.city,
+      //required this.street,
       required this.mobile,
       required this.geoPoint});
 
+  // @override
+  // final String state;
+  // @override
+  // final String city;
+  // @override
+  // final String street;
   @override
   final String mobile;
   @override
@@ -124,6 +173,9 @@ class _$_Address implements _Address {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Address &&
+            //(identical(other.state, state) || other.state == state) &&
+            //(identical(other.city, city) || other.city == city) &&
+           // (identical(other.street, street) || other.street == street) &&
             (identical(other.mobile, mobile) || other.mobile == mobile) &&
             (identical(other.geoPoint, geoPoint) ||
                 other.geoPoint == geoPoint));
@@ -131,7 +183,7 @@ class _$_Address implements _Address {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, mobile, geoPoint);
+      Object.hash(runtimeType,mobile, geoPoint);
 
   @JsonKey(ignore: true)
   @override
@@ -143,10 +195,18 @@ class _$_Address implements _Address {
 abstract class _Address implements Address {
   const factory _Address(
       {
-      
+      //required final String state,
+      //required final String city,
+      //required final String street,
       required final String mobile,
       required final GeoPoint? geoPoint}) = _$_Address;
 
+  // @override
+  // String get state;
+  // @override
+  // String get city;
+  // @override
+  // String get street;
   @override
   String get mobile;
   @override

@@ -7,13 +7,22 @@ part of 'order_dto.dart';
 // **************************************************************************
 
 _$_OrderDto _$$_OrderDtoFromJson(Map<String, dynamic> json) => _$_OrderDto(
-      date: json['date'] as int,
+      date: json['date'] as Timestamp,
+      orderId: json['orderId'] as String,
+      paymentUrl: json['paymentUrl'] as String,
+
+      paymentRef: json['paymentRef'] as String,
+
       pickupOption: $enumDecode(_$PickupOptionEnumMap, json['pickupOption']),
       paymentMethod: json['paymentMethod'] as String,
       address: json['addressModel'] == null
           ? null
           : AddressDto.fromJson(json['addressModel'] as Map<String, dynamic>),
       userId: json['userId'] as String,
+      
+      lieuDepart: json['lieu_depart'] as String,
+      lieuArrivee: json['lieu_arrive'] as String,
+
       userName: json['userName'] as String,
       userImage: json['userImage'] as String,
       userPhone: json['userPhone'] as String,
@@ -49,6 +58,9 @@ Value? _$JsonConverterFromJson<Json, Value>(
 
 _$_AddressDto _$$_AddressDtoFromJson(Map<String, dynamic> json) =>
     _$_AddressDto(
+      // state: json['state'] as String,
+      // city: json['city'] as String,
+      // street: json['street'] as String,
       mobile: json['mobile'] as String,
       geoPoint: _$JsonConverterFromJson<GeoPoint, GeoPoint>(
           json['geoPoint'], const GeoPointConverter().fromJson),

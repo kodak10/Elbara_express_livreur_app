@@ -1,8 +1,7 @@
-import 'package:deliverzler/core/presentation/helpers/localization_helper.dart';
-import 'package:deliverzler/core/presentation/styles/styles.dart';
 import 'package:flutter/material.dart';
 
-
+import '../../../../../core/presentation/helpers/localization_helper.dart';
+import '../../../../../core/presentation/styles/styles.dart';
 
 class CancelOrderDialog extends StatelessWidget {
   const CancelOrderDialog({required this.cancelNoteController, super.key});

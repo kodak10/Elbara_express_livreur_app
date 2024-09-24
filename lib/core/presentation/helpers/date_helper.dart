@@ -1,9 +1,23 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:intl/intl.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
+
 abstract class DateHelper {
+
+   static String convertTimestampToString(BuildContext context, Timestamp timestamp) {
+    // Convertir Timestamp en DateTime
+    DateTime dateTime = timestamp.toDate();
+    
+    // Formatter la date
+    final locale = Localizations.localeOf(context).languageCode;
+    String formattedDate = DateFormat.yMd(locale).add_Hms().format(dateTime);
+
+    return formattedDate;
+  }
+
   static String convertUTCToLocal(BuildContext context, DateTime date) {
     final locale = Localizations.localeOf(context).languageCode;
     return DateFormat.yMMMd(locale).add_jm().format(date);

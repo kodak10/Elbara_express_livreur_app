@@ -12,12 +12,19 @@ part 'order_dto.g.dart';
 @Freezed(toJson: false)
 class OrderDto with _$OrderDto {
   const factory OrderDto({
-    required int date,
+    required String orderId,
+    required String paymentUrl,
+    required String paymentRef,
+
+    required Timestamp date,
     required PickupOption pickupOption,
     required String paymentMethod,
     @JsonKey(name: 'addressModel') required AddressDto? address,
     required String userId,
     required String userName,
+    required String lieuDepart,
+    required String lieuArrivee,
+
     required String userImage,
     required String userPhone,
     required String userNote,
@@ -31,12 +38,19 @@ class OrderDto with _$OrderDto {
   factory OrderDto.fromDomain(AppOrder order) {
     return OrderDto(
       id: order.id,
+      orderId: order.orderId,
+      paymentUrl: order.paymentUrl,
+
+      paymentRef: order.paymentRef,
       date: order.date,
       pickupOption: order.pickupOption,
       paymentMethod: order.paymentMethod,
       address: order.address != null ? AddressDto.fromDomain(order.address!) : null,
       userId: order.userId,
       userName: order.userName,
+      lieuDepart: order.lieuDepart,
+      lieuArrivee: order.lieuArrivee,
+
       userImage: order.userImage,
       userPhone: order.userPhone,
       userNote: order.userNote,
@@ -63,12 +77,19 @@ class OrderDto with _$OrderDto {
   AppOrder toDomain() {
     return AppOrder(
       id: id ?? '',
+      orderId: orderId,
+      paymentUrl: paymentUrl,
+
+      paymentRef: paymentRef,
       date: date,
       pickupOption: pickupOption,
       paymentMethod: paymentMethod,
       address: address?.toDomain(),
       userId: userId,
       userName: userName,
+      lieuArrivee: lieuArrivee,
+      lieuDepart: lieuDepart,
+
       userImage: userImage,
       userPhone: userPhone,
       userNote: userNote,
@@ -83,6 +104,9 @@ class OrderDto with _$OrderDto {
 @Freezed(toJson: false)
 class AddressDto with _$AddressDto {
   const factory AddressDto({
+    // required String state,
+    // required String city,
+    // required String street,
     required String mobile,
     @GeoPointConverter() required GeoPoint? geoPoint,
   }) = _AddressDto;
@@ -92,6 +116,9 @@ class AddressDto with _$AddressDto {
 
   factory AddressDto.fromDomain(Address address) {
     return AddressDto(
+      // state: address.state,
+      // city: address.city,
+      // street: address.street,
       mobile: address.mobile,
       geoPoint: address.geoPoint,
     );
@@ -99,6 +126,9 @@ class AddressDto with _$AddressDto {
 
   Address toDomain() {
     return Address(
+      // state: state,
+      // city: city,
+      // street: street,
       mobile: mobile,
       geoPoint: geoPoint,
     );

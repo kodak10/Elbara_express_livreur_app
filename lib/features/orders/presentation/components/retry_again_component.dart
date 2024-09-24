@@ -1,8 +1,8 @@
-import 'package:deliverzler/core/presentation/helpers/localization_helper.dart';
-import 'package:deliverzler/core/presentation/styles/styles.dart';
-import 'package:deliverzler/core/presentation/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/presentation/helpers/localization_helper.dart';
+import '../../../../core/presentation/styles/styles.dart';
+import '../../../../core/presentation/widgets/custom_elevated_button.dart';
 
 class RetryAgainComponent extends StatelessWidget {
   const RetryAgainComponent({

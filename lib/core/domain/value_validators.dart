@@ -167,36 +167,6 @@ class ValueValidators {
     };
   }
 
-  FormFieldValidator<String?> validateCreatePassword(BuildContext context) {
-    String _patternEmail =
-        r'^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!-_@\#&$%^*]).{8,32}$';
-    */ /*
-    (?=.*[A-Z])       // should contain at least one upper case
-    (?=.*[a-z])       // should contain at least one lower case
-    (?=.*?[0-9])      // should contain at least one digit
-    (?=.*?[!@#\$&*~]) // should contain at least one Special character
-    .{8,}             // Must be at least 8 characters in length  */ /*
-    return (value) {
-      if (value!.isEmpty) {
-        return tr(context).thisFieldIsEmpty;
-      } else if (!checkPattern(pattern: _patternEmail, value: value)) {
-        return tr(context).passwordIsNotStrong;
-      } else {
-        return null;
-      }
-    };
-  }
-
-  String? validateConfirmPassword(
-      BuildContext context, String password, String? confirmPassword) {
-    if (confirmPassword!.isEmpty) {
-      return tr(context).thisFieldIsEmpty;
-    } else if (confirmPassword != password) {
-      return tr(context).confirmPasswordDoNotMatch;
-    } else {
-      return null;
-    }
-  }
 
   FormFieldValidator<String?> validatePositiveInteger(BuildContext context) {
     return (value) {
@@ -225,6 +195,12 @@ class ValueValidators {
       }
     };
   }*/
+
+
+  
+
+
+  
 
   static bool isNumeric(String str) {
     const patternInteger = r'^-?[0-9]+$';

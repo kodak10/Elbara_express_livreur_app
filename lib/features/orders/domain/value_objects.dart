@@ -6,6 +6,9 @@ part 'value_objects.freezed.dart';
 @freezed
 class Address with _$Address {
   const factory Address({
+    //required String state,
+    //required String city,
+    //required String street,
     required String mobile,
     required GeoPoint? geoPoint,
   }) = _Address;
@@ -13,9 +16,9 @@ class Address with _$Address {
 
 @JsonEnum(valueField: 'jsonValue')
 enum PickupOption {
-  delivery('delivery'),
-  pickUp('pickUp'),
-  diningRoom('diningRoom');
+  delivery('delivery'), //livraison
+  pickUp('pickUp'), //ramasser
+  diningRoom('diningRoom'); //salle à manger
 
   const PickupOption(this.jsonValue);
 
@@ -24,11 +27,11 @@ enum PickupOption {
 
 @JsonEnum(valueField: 'jsonValue')
 enum DeliveryStatus {
-  pending('pending'),
-  upcoming('upcoming'),
-  onTheWay('onTheWay'),
-  delivered('delivered'),
-  canceled('canceled');
+  pending('pending'), //en attente
+  upcoming('upcoming'), //A venir
+  onTheWay('onTheWay'), //en chemin
+  delivered('delivered'), //livré
+  canceled('canceled'); //annulé
 
   const DeliveryStatus(this.jsonValue);
 

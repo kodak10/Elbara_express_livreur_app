@@ -11,7 +11,7 @@ import '../../../features/map/presentation/screens/map_screen/map_screen.dart';
 import '../../../features/profile/presentation/screens/profile_screen/profile_screen.dart';
 import '../../../features/settings/presentation/screens/language_screen/language_screen.dart';
 import '../../../features/settings/presentation/screens/settings_screen/settings_screen.dart';
-import '../../../features/orders/presentation/screens/settings_screen/orders_screen.dart';
+import '../../../features/orders/presentation/screens/order_screen/orders_screen.dart';
 
 import '../screens/no_internet_screen/no_internet_screen.dart';
 import '../screens/route_error_screen/route_error_screen.dart';

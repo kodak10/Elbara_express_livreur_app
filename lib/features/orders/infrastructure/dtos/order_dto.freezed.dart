@@ -20,13 +20,21 @@ OrderDto _$OrderDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OrderDto {
-  int get date => throw _privateConstructorUsedError;
+  Timestamp get date => throw _privateConstructorUsedError;
+  String get orderId => throw _privateConstructorUsedError;
+  String get paymentUrl => throw _privateConstructorUsedError;
+
+  String get paymentRef => throw _privateConstructorUsedError;
+
   PickupOption get pickupOption => throw _privateConstructorUsedError;
   String get paymentMethod => throw _privateConstructorUsedError;
   @JsonKey(name: 'addressModel')
   AddressDto? get address => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   String get userName => throw _privateConstructorUsedError;
+    String get lieuDepart => throw _privateConstructorUsedError;
+  String get lieuArrivee => throw _privateConstructorUsedError;
+
   String get userImage => throw _privateConstructorUsedError;
   String get userPhone => throw _privateConstructorUsedError;
   String get userNote => throw _privateConstructorUsedError;
@@ -49,12 +57,19 @@ abstract class $OrderDtoCopyWith<$Res> {
       _$OrderDtoCopyWithImpl<$Res, OrderDto>;
   @useResult
   $Res call(
-      {int date,
+      {Timestamp date,
+      String orderId,
+      String paymentUrl,
+
+      String paymentRef,
       PickupOption pickupOption,
       String paymentMethod,
       @JsonKey(name: 'addressModel') AddressDto? address,
       String userId,
       String userName,
+            String lieuDepart,
+      String lieuArrivee,
+
       String userImage,
       String userPhone,
       String userNote,
@@ -81,11 +96,19 @@ class _$OrderDtoCopyWithImpl<$Res, $Val extends OrderDto>
   @override
   $Res call({
     Object? date = null,
+    Object? orderId = null,
+    Object? paymentUrl = null,
+
+    Object? paymentRef = null,
+
     Object? pickupOption = null,
     Object? paymentMethod = null,
     Object? address = freezed,
     Object? userId = null,
     Object? userName = null,
+        Object? lieuDepart = null,
+    Object? lieuArrivee = null,
+
     Object? userImage = null,
     Object? userPhone = null,
     Object? userNote = null,
@@ -99,7 +122,29 @@ class _$OrderDtoCopyWithImpl<$Res, $Val extends OrderDto>
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Timestamp,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+      paymentUrl: null == paymentUrl
+          ? _value.paymentUrl
+          : paymentUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      paymentRef: null == paymentRef
+          ? _value.paymentRef
+          : paymentRef // ignore: cast_nullable_to_non_nullable
+              as String,
+
+              lieuArrivee: null == lieuArrivee
+          ? _value.lieuArrivee
+          : lieuArrivee // ignore: cast_nullable_to_non_nullable
+              as String,
+              lieuDepart: null == lieuDepart
+          ? _value.paymentUrl
+          : lieuDepart // ignore: cast_nullable_to_non_nullable
+              as String,
+
       pickupOption: null == pickupOption
           ? _value.pickupOption
           : pickupOption // ignore: cast_nullable_to_non_nullable
@@ -176,12 +221,19 @@ abstract class _$$_OrderDtoCopyWith<$Res> implements $OrderDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int date,
+      {Timestamp date,
+      String orderId,
+      String paymentUrl,
+      String paymentRef,
+
       PickupOption pickupOption,
       String paymentMethod,
       @JsonKey(name: 'addressModel') AddressDto? address,
       String userId,
       String userName,
+            String lieuDepart,
+      String lieuArrivee,
+
       String userImage,
       String userPhone,
       String userNote,
@@ -207,11 +259,19 @@ class __$$_OrderDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? date = null,
+    Object? orderId = null,
+    Object? paymentUrl = null,
+    Object? paymentRef = null,
+
     Object? pickupOption = null,
     Object? paymentMethod = null,
     Object? address = freezed,
     Object? userId = null,
     Object? userName = null,
+
+     Object? lieuDepart = null,
+    Object? lieuArrivee = null,
+
     Object? userImage = null,
     Object? userPhone = null,
     Object? userNote = null,
@@ -225,7 +285,29 @@ class __$$_OrderDtoCopyWithImpl<$Res>
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Timestamp,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+        paymentUrl: null == paymentUrl
+          ? _value.paymentUrl
+          : paymentUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+        paymentRef: null == paymentRef
+          ? _value.paymentRef
+          : paymentRef // ignore: cast_nullable_to_non_nullable
+              as String,
+
+              lieuDepart: null == lieuDepart
+          ? _value.lieuDepart
+          : lieuDepart // ignore: cast_nullable_to_non_nullable
+              as String,
+        lieuArrivee: null == lieuArrivee
+          ? _value.lieuArrivee
+          : lieuArrivee // ignore: cast_nullable_to_non_nullable
+              as String,
+
       pickupOption: null == pickupOption
           ? _value.pickupOption
           : pickupOption // ignore: cast_nullable_to_non_nullable
@@ -287,12 +369,19 @@ class __$$_OrderDtoCopyWithImpl<$Res>
 class _$_OrderDto extends _OrderDto {
   const _$_OrderDto(
       {required this.date,
+      required this.orderId,
+      required this.paymentUrl,
+      required this.paymentRef,
+
       required this.pickupOption,
       required this.paymentMethod,
       @JsonKey(name: 'addressModel') required this.address,
       required this.userId,
       required this.userName,
       required this.userImage,
+      required this.lieuDepart,
+      required this.lieuArrivee,
+
       required this.userPhone,
       required this.userNote,
       required this.employeeCancelNote,
@@ -306,7 +395,17 @@ class _$_OrderDto extends _OrderDto {
       _$$_OrderDtoFromJson(json);
 
   @override
-  final int date;
+  final Timestamp date;
+  @override
+  final String orderId;
+  @override
+  final String paymentUrl;
+   @override
+  final String paymentRef;
+   @override
+  final String lieuDepart;
+  @override
+  final String lieuArrivee;
   @override
   final PickupOption pickupOption;
   @override
@@ -354,6 +453,8 @@ class _$_OrderDto extends _OrderDto {
                 other.paymentMethod == paymentMethod) &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.lieuDepart, lieuDepart) || other.lieuDepart == lieuDepart) &&
+            (identical(other.lieuArrivee, lieuArrivee) || other.lieuArrivee == lieuArrivee) &&
             (identical(other.userName, userName) ||
                 other.userName == userName) &&
             (identical(other.userImage, userImage) ||
@@ -380,6 +481,8 @@ class _$_OrderDto extends _OrderDto {
       date,
       pickupOption,
       paymentMethod,
+      lieuDepart,
+      lieuArrivee,
       address,
       userId,
       userName,
@@ -401,12 +504,20 @@ class _$_OrderDto extends _OrderDto {
 
 abstract class _OrderDto extends OrderDto {
   const factory _OrderDto(
-      {required final int date,
+      {required final Timestamp date,
+      required final String orderId,
+      required final String paymentUrl,
+
+      required final String paymentRef,
+
       required final PickupOption pickupOption,
       required final String paymentMethod,
       @JsonKey(name: 'addressModel') required final AddressDto? address,
       required final String userId,
       required final String userName,
+      required final String lieuDepart,
+      required final String lieuArrivee,
+
       required final String userImage,
       required final String userPhone,
       required final String userNote,
@@ -420,7 +531,13 @@ abstract class _OrderDto extends OrderDto {
   factory _OrderDto.fromJson(Map<String, dynamic> json) = _$_OrderDto.fromJson;
 
   @override
-  int get date;
+  String get orderId;
+   @override
+  String get paymentUrl;
+  @override
+  String get paymentRef;
+  @override
+  Timestamp get date;
   @override
   PickupOption get pickupOption;
   @override
@@ -430,6 +547,10 @@ abstract class _OrderDto extends OrderDto {
   AddressDto? get address;
   @override
   String get userId;
+  @override
+   String get lieuDepart;
+  @override
+   String get lieuArrivee;
   @override
   String get userName;
   @override
@@ -462,7 +583,9 @@ AddressDto _$AddressDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AddressDto {
-  
+  String get state => throw _privateConstructorUsedError;
+  String get city => throw _privateConstructorUsedError;
+  String get street => throw _privateConstructorUsedError;
   String get mobile => throw _privateConstructorUsedError;
   @GeoPointConverter()
   GeoPoint? get geoPoint => throw _privateConstructorUsedError;
@@ -479,7 +602,9 @@ abstract class $AddressDtoCopyWith<$Res> {
       _$AddressDtoCopyWithImpl<$Res, AddressDto>;
   @useResult
   $Res call(
-      {
+      {String state,
+      String city,
+      String street,
       String mobile,
       @GeoPointConverter() GeoPoint? geoPoint});
 }
@@ -497,10 +622,25 @@ class _$AddressDtoCopyWithImpl<$Res, $Val extends AddressDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? state = null,
+    Object? city = null,
+    Object? street = null,
     Object? mobile = null,
     Object? geoPoint = freezed,
   }) {
     return _then(_value.copyWith(
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _value.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      street: null == street
+          ? _value.street
+          : street // ignore: cast_nullable_to_non_nullable
+              as String,
       mobile: null == mobile
           ? _value.mobile
           : mobile // ignore: cast_nullable_to_non_nullable
@@ -522,7 +662,9 @@ abstract class _$$_AddressDtoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {
+      {String state,
+      String city,
+      String street,
       String mobile,
       @GeoPointConverter() GeoPoint? geoPoint});
 }
@@ -538,10 +680,25 @@ class __$$_AddressDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? state = null,
+    Object? city = null,
+    Object? street = null,
     Object? mobile = null,
     Object? geoPoint = freezed,
   }) {
     return _then(_$_AddressDto(
+      // state: null == state
+      //     ? _value.state
+      //     : state // ignore: cast_nullable_to_non_nullable
+      //         as String,
+      // city: null == city
+      //     ? _value.city
+      //     : city // ignore: cast_nullable_to_non_nullable
+      //         as String,
+      // street: null == street
+      //     ? _value.street
+      //     : street // ignore: cast_nullable_to_non_nullable
+      //         as String,
       mobile: null == mobile
           ? _value.mobile
           : mobile // ignore: cast_nullable_to_non_nullable
@@ -559,6 +716,9 @@ class __$$_AddressDtoCopyWithImpl<$Res>
 class _$_AddressDto extends _AddressDto {
   const _$_AddressDto(
       {
+      // required this.state,
+      // required this.city,
+      // required this.street,
       required this.mobile,
       @GeoPointConverter() required this.geoPoint})
       : super._();
@@ -566,6 +726,12 @@ class _$_AddressDto extends _AddressDto {
   factory _$_AddressDto.fromJson(Map<String, dynamic> json) =>
       _$$_AddressDtoFromJson(json);
 
+  // @override
+  // final String state;
+  // @override
+  // final String city;
+  // @override
+  // final String street;
   @override
   final String mobile;
   @override
@@ -582,6 +748,9 @@ class _$_AddressDto extends _AddressDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AddressDto &&
+            // (identical(other.state, state) || other.state == state) &&
+            // (identical(other.city, city) || other.city == city) &&
+            // (identical(other.street, street) || other.street == street) &&
             (identical(other.mobile, mobile) || other.mobile == mobile) &&
             (identical(other.geoPoint, geoPoint) ||
                 other.geoPoint == geoPoint));
@@ -602,6 +771,9 @@ class _$_AddressDto extends _AddressDto {
 abstract class _AddressDto extends AddressDto {
   const factory _AddressDto(
       {
+      // required final String state,
+      // required final String city,
+      // required final String street,
       required final String mobile,
       @GeoPointConverter() required final GeoPoint? geoPoint}) = _$_AddressDto;
   const _AddressDto._() : super._();
@@ -609,6 +781,12 @@ abstract class _AddressDto extends AddressDto {
   factory _AddressDto.fromJson(Map<String, dynamic> json) =
       _$_AddressDto.fromJson;
 
+  // @override
+  // String get state;
+  // @override
+  // String get city;
+  // @override
+  // String get street;
   @override
   String get mobile;
   @override

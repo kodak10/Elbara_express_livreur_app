@@ -17,7 +17,11 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AppOrder {
   String get id => throw _privateConstructorUsedError;
-  int get date => throw _privateConstructorUsedError;
+  String get orderId => throw _privateConstructorUsedError;
+  String get paymentUrl => throw _privateConstructorUsedError;
+  String get paymentRef => throw _privateConstructorUsedError;
+
+  Timestamp get date => throw _privateConstructorUsedError;
   PickupOption get pickupOption => throw _privateConstructorUsedError;
   String get paymentMethod => throw _privateConstructorUsedError;
   Address? get address => throw _privateConstructorUsedError;
@@ -26,6 +30,10 @@ mixin _$AppOrder {
   String get userImage => throw _privateConstructorUsedError;
   String get userPhone => throw _privateConstructorUsedError;
   String get userNote => throw _privateConstructorUsedError;
+
+  String get lieuDepart => throw _privateConstructorUsedError;
+  String get lieuArrivee => throw _privateConstructorUsedError;
+
   String? get employeeCancelNote => throw _privateConstructorUsedError;
   DeliveryStatus get deliveryStatus => throw _privateConstructorUsedError;
   String? get deliveryId => throw _privateConstructorUsedError;
@@ -42,8 +50,13 @@ abstract class $AppOrderCopyWith<$Res> {
       _$AppOrderCopyWithImpl<$Res, AppOrder>;
   @useResult
   $Res call(
-      {String id,
-      int date,
+      {
+      String id,
+      String orderId,
+      String paymentUrl,
+
+      String paymentRef,
+      Timestamp date,
       PickupOption pickupOption,
       String paymentMethod,
       Address? address,
@@ -51,6 +64,10 @@ abstract class $AppOrderCopyWith<$Res> {
       String userName,
       String userImage,
       String userPhone,
+            String lieuDepart   ,
+
+      String lieuArrivee,
+
       String userNote,
       String? employeeCancelNote,
       DeliveryStatus deliveryStatus,
@@ -74,6 +91,10 @@ class _$AppOrderCopyWithImpl<$Res, $Val extends AppOrder>
   @override
   $Res call({
     Object? id = null,
+    Object? orderId = null,
+    Object? paymentUrl = null,
+
+    Object? paymentRef = null,
     Object? date = null,
     Object? pickupOption = null,
     Object? paymentMethod = null,
@@ -82,6 +103,9 @@ class _$AppOrderCopyWithImpl<$Res, $Val extends AppOrder>
     Object? userName = null,
     Object? userImage = null,
     Object? userPhone = null,
+        Object? lieuDepart    = null,
+    Object? lieuArrivee = null,
+
     Object? userNote = null,
     Object? employeeCancelNote = freezed,
     Object? deliveryStatus = null,
@@ -93,10 +117,25 @@ class _$AppOrderCopyWithImpl<$Res, $Val extends AppOrder>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+
+       paymentUrl: null == paymentUrl
+          ? _value.paymentUrl
+          : paymentUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+
+      paymentRef: null == paymentRef
+          ? _value.paymentRef
+          : paymentRef // ignore: cast_nullable_to_non_nullable
+              as String,
+
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Timestamp,
       pickupOption: null == pickupOption
           ? _value.pickupOption
           : pickupOption // ignore: cast_nullable_to_non_nullable
@@ -105,6 +144,16 @@ class _$AppOrderCopyWithImpl<$Res, $Val extends AppOrder>
           ? _value.paymentMethod
           : paymentMethod // ignore: cast_nullable_to_non_nullable
               as String,
+
+              lieuDepart   : null == lieuDepart   
+          ? _value.lieuDepart   
+          : lieuDepart    // ignore: cast_nullable_to_non_nullable
+              as String,
+              lieuArrivee: null == lieuArrivee
+          ? _value.lieuArrivee
+          : lieuArrivee // ignore: cast_nullable_to_non_nullable
+              as String,
+
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -170,12 +219,19 @@ abstract class _$$_AppOrderCopyWith<$Res> implements $AppOrderCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      int date,
+      String orderId,
+      String paymentUrl,
+      String paymentRef,
+
+      Timestamp date,
       PickupOption pickupOption,
       String paymentMethod,
       Address? address,
       String userId,
       String userName,
+            String lieuDepart ,
+      String lieuArrivee,
+
       String userImage,
       String userPhone,
       String userNote,
@@ -200,12 +256,20 @@ class __$$_AppOrderCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? orderId = null,
+    Object? paymentUrl = null,
+
+    Object? paymentRef = null,
+
     Object? date = null,
     Object? pickupOption = null,
     Object? paymentMethod = null,
     Object? address = freezed,
     Object? userId = null,
     Object? userName = null,
+        Object? lieuDepart = null,
+    Object? lieuArrivee = null,
+
     Object? userImage = null,
     Object? userPhone = null,
     Object? userNote = null,
@@ -219,10 +283,34 @@ class __$$_AppOrderCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      orderId: null == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String,
+      paymentUrl: null == paymentUrl
+          ? _value.paymentUrl
+          : paymentUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+
+      paymentRef: null == paymentRef
+          ? _value.paymentRef
+          : paymentRef // ignore: cast_nullable_to_non_nullable
+              as String,
+
+               lieuDepart: null == lieuDepart
+          ? _value.lieuDepart
+          : lieuDepart // ignore: cast_nullable_to_non_nullable
+              as String,
+
+               lieuArrivee: null == lieuArrivee
+          ? _value.lieuArrivee
+          : lieuArrivee // ignore: cast_nullable_to_non_nullable
+              as String,
+
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as int,
+              as Timestamp,
       pickupOption: null == pickupOption
           ? _value.pickupOption
           : pickupOption // ignore: cast_nullable_to_non_nullable
@@ -279,13 +367,21 @@ class __$$_AppOrderCopyWithImpl<$Res>
 
 class _$_AppOrder extends _AppOrder {
   const _$_AppOrder(
-      {required this.id,
+      {
+      required this.id,
+      required this.orderId,
+      required this.paymentUrl,
+
+      required this.paymentRef,
       required this.date,
       required this.pickupOption,
       required this.paymentMethod,
       required this.address,
       required this.userId,
       required this.userName,
+      required this.lieuDepart,
+      required this.lieuArrivee,
+
       required this.userImage,
       required this.userPhone,
       required this.userNote,
@@ -297,12 +393,22 @@ class _$_AppOrder extends _AppOrder {
 
   @override
   final String id;
+   @override
+  final String orderId;
   @override
-  final int date;
+  final String paymentUrl;
+   @override
+  final String paymentRef;
+  @override
+  final Timestamp date;
   @override
   final PickupOption pickupOption;
   @override
   final String paymentMethod;
+   @override
+  final String lieuDepart;
+   @override
+  final String lieuArrivee;
   @override
   final Address? address;
   @override
@@ -326,7 +432,7 @@ class _$_AppOrder extends _AppOrder {
 
   @override
   String toString() {
-    return 'AppOrder(id: $id, date: $date, pickupOption: $pickupOption, paymentMethod: $paymentMethod, address: $address, userId: $userId, userName: $userName, userImage: $userImage, userPhone: $userPhone, userNote: $userNote, employeeCancelNote: $employeeCancelNote, deliveryStatus: $deliveryStatus, deliveryId: $deliveryId, deliveryGeoPoint: $deliveryGeoPoint)';
+    return 'AppOrder(id: $id,orderId: $orderId, paymentUrl: $paymentUrl,paymentRef: $paymentRef, date: $date, pickupOption: $pickupOption, paymentMethod: $paymentMethod, lieuDepart: $lieuDepart,lieuArrivee: $lieuArrivee, address: $address, userId: $userId, userName: $userName, userImage: $userImage, userPhone: $userPhone, userNote: $userNote, employeeCancelNote: $employeeCancelNote, deliveryStatus: $deliveryStatus, deliveryId: $deliveryId, deliveryGeoPoint: $deliveryGeoPoint)';
   }
 
   @JsonKey(ignore: true)
@@ -336,14 +442,25 @@ class _$_AppOrder extends _AppOrder {
       __$$_AppOrderCopyWithImpl<_$_AppOrder>(this, _$identity);
 }
 
+
+
 abstract class _AppOrder extends AppOrder {
   const factory _AppOrder(
-      {required final String id,
-      required final int date,
+      {
+      required final String id,
+      required final String orderId,
+      required final String paymentUrl,
+
+      required final String paymentRef,
+
+      required final Timestamp date,
       required final PickupOption pickupOption,
       required final String paymentMethod,
       required final Address? address,
       required final String userId,
+            required final String lieuDepart,
+      required final String lieuArrivee,
+
       required final String userName,
       required final String userImage,
       required final String userPhone,
@@ -357,11 +474,18 @@ abstract class _AppOrder extends AppOrder {
   @override
   String get id;
   @override
-  int get date;
+  Timestamp get date;
   @override
   PickupOption get pickupOption;
   @override
   String get paymentMethod;
+
+  @override
+  String get paymentRef;
+  @override
+  String get lieuDepart;
+  @override
+  String get lieuArrivee;
   @override
   Address? get address;
   @override

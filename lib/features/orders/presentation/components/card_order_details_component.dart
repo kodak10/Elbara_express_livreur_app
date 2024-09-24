@@ -1,11 +1,10 @@
-import 'package:deliverzler/core/presentation/helpers/date_helper.dart';
-import 'package:deliverzler/core/presentation/helpers/localization_helper.dart';
-import 'package:deliverzler/core/presentation/styles/styles.dart';
-import 'package:deliverzler/features/orders/domain/order.dart';
-import 'package:deliverzler/features/orders/domain/value_objects.dart';
 import 'package:flutter/material.dart';
 
-
+import '../../../../core/presentation/helpers/date_helper.dart';
+import '../../../../core/presentation/helpers/localization_helper.dart';
+import '../../../../core/presentation/styles/styles.dart';
+import '../../domain/order.dart';
+import '../../domain/value_objects.dart';
 
 class CardOrderDetailsComponent extends StatelessWidget {
   const CardOrderDetailsComponent({
@@ -56,7 +55,7 @@ class CardOrderDetailsComponent extends StatelessWidget {
           height: Sizes.marginV2,
         ),
         Text(
-          DateHelper.convertEpochToLocal(context, order.date),
+          DateHelper.convertTimestampToString(context, order.date),
           style: TextStyles.f12(context),
           overflow: TextOverflow.ellipsis,
         ),

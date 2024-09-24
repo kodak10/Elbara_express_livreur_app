@@ -1,9 +1,9 @@
-import 'package:deliverzler/core/presentation/helpers/localization_helper.dart';
-import 'package:deliverzler/core/presentation/styles/styles.dart';
-import 'package:deliverzler/core/presentation/widgets/cached_network_image_circular.dart';
-import 'package:deliverzler/features/orders/domain/order.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/presentation/helpers/localization_helper.dart';
+import '../../../../core/presentation/styles/styles.dart';
+import '../../../../core/presentation/widgets/cached_network_image_circular.dart';
+import '../../domain/order.dart';
 
 class CardUserDetailsComponent extends StatelessWidget {
   const CardUserDetailsComponent({

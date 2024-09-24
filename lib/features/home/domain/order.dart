@@ -14,12 +14,17 @@ class AppOrder with _$AppOrder {
   const factory AppOrder({
     required String id,
     required String orderId,
+    required String paymentUrl,
+    required String paymentRef,
 
-    required int date,
+    required Timestamp date,
     required PickupOption pickupOption,
     required String paymentMethod,
     required Address? address,
     required String userId,
+        required String lieuDepart,
+    required String lieuArrivee,
+
     required String userName,
     required String userImage,
     required String userPhone,
@@ -43,6 +48,9 @@ class AppOrder with _$AppOrder {
             other is _$_AppOrder &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.paymentUrl, paymentUrl) || other.paymentUrl == paymentUrl) &&
+            (identical(other.paymentRef, paymentRef) || other.paymentRef == paymentRef) &&
+
             (identical(other.date, date) || other.date == date) &&
             (identical(other.pickupOption, pickupOption) || other.pickupOption == pickupOption) &&
             (identical(other.paymentMethod, paymentMethod) ||
@@ -50,6 +58,10 @@ class AppOrder with _$AppOrder {
             (identical(other.address, address) || other.address == address) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.userName, userName) || other.userName == userName) &&
+
+             (identical(other.lieuDepart, lieuDepart) || other.lieuDepart == lieuDepart) &&
+              (identical(other.lieuArrivee, lieuArrivee) || other.lieuArrivee == lieuArrivee) &&
+
             (identical(other.userImage, userImage) || other.userImage == userImage) &&
             (identical(other.userPhone, userPhone) || other.userPhone == userPhone) &&
             (identical(other.userNote, userNote) || other.userNote == userNote) &&
@@ -65,11 +77,16 @@ class AppOrder with _$AppOrder {
         runtimeType,
         id,
         orderId,
+        paymentUrl,
+        paymentRef,
         date,
         pickupOption,
         paymentMethod,
         address,
         userId,
+        lieuDepart,
+        lieuArrivee,
+
         userName,
         userImage,
         userPhone,

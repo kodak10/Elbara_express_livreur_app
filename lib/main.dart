@@ -20,7 +20,8 @@ part 'core/infrastructure/services/main_initializer.dart';
 
 void main() async {
   final container = await _mainInitializer();
-  
+    //FirebaseNotificationService().setupFirebase(); // Initialiser le service de notifications Firebase
+
   runApp(
     UncontrolledProviderScope(
       container: container,

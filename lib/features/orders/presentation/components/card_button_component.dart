@@ -1,8 +1,8 @@
-import 'package:deliverzler/core/core_features/theme/presentation/utils/custom_colors.dart';
-import 'package:deliverzler/core/presentation/styles/styles.dart';
-import 'package:deliverzler/core/presentation/widgets/custom_outlined_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/core_features/theme/presentation/utils/custom_colors.dart';
+import '../../../../core/presentation/styles/styles.dart';
+import '../../../../core/presentation/widgets/custom_outlined_button.dart';
 
 class CardButtonComponent extends StatelessWidget {
   const CardButtonComponent({

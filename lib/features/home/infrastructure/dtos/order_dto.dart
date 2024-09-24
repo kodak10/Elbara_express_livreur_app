@@ -13,12 +13,18 @@ part 'order_dto.g.dart';
 class OrderDto with _$OrderDto {
   const factory OrderDto({
     required String orderId,
-    required int date,
+    required String paymentUrl,
+    required String paymentRef,
+
+    required Timestamp date,
     required PickupOption pickupOption,
     required String paymentMethod,
     @JsonKey(name: 'addressModel') required AddressDto? address,
     required String userId,
     required String userName,
+    required String lieuDepart,
+    required String lieuArrivee,
+
     required String userImage,
     required String userPhone,
     required String userNote,
@@ -33,12 +39,18 @@ class OrderDto with _$OrderDto {
     return OrderDto(
       id: order.id,
       orderId: order.orderId,
+      paymentUrl: order.paymentUrl,
+
+      paymentRef: order.paymentRef,
       date: order.date,
       pickupOption: order.pickupOption,
       paymentMethod: order.paymentMethod,
       address: order.address != null ? AddressDto.fromDomain(order.address!) : null,
       userId: order.userId,
       userName: order.userName,
+      lieuDepart: order.lieuDepart,
+      lieuArrivee: order.lieuArrivee,
+
       userImage: order.userImage,
       userPhone: order.userPhone,
       userNote: order.userNote,
@@ -66,12 +78,18 @@ class OrderDto with _$OrderDto {
     return AppOrder(
       id: id ?? '',
       orderId: orderId,
+      paymentUrl: paymentUrl,
+
+      paymentRef: paymentRef,
       date: date,
       pickupOption: pickupOption,
       paymentMethod: paymentMethod,
       address: address?.toDomain(),
       userId: userId,
       userName: userName,
+      lieuArrivee: lieuArrivee,
+      lieuDepart: lieuDepart,
+
       userImage: userImage,
       userPhone: userPhone,
       userNote: userNote,

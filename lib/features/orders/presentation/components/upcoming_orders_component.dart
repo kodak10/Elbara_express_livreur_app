@@ -1,19 +1,18 @@
-import 'package:deliverzler/core/presentation/extensions/future_extensions.dart';
-import 'package:deliverzler/core/presentation/helpers/localization_helper.dart';
-import 'package:deliverzler/core/presentation/routing/app_router.dart';
-import 'package:deliverzler/core/presentation/styles/styles.dart';
-import 'package:deliverzler/core/presentation/utils/fp_framework.dart';
-import 'package:deliverzler/core/presentation/utils/riverpod_framework.dart';
-import 'package:deliverzler/core/presentation/widgets/loading_widgets.dart';
-import 'package:deliverzler/core/presentation/widgets/platform_widgets/platform_refresh_indicator.dart';
-import 'package:deliverzler/core/presentation/widgets/seperated_sliver_child_builder_delegate.dart';
-import 'package:deliverzler/features/orders/domain/value_objects.dart';
-import 'package:deliverzler/features/orders/presentation/providers/selected_order_provider.dart';
-import 'package:deliverzler/features/orders/presentation/providers/upcoming_orders_provider.dart';
-import 'package:deliverzler/features/orders/presentation/providers/update_delivery_status_provider/update_delivery_status_provider.dart';
 import 'package:flutter/material.dart';
 
-
+import '../../../../core/presentation/extensions/future_extensions.dart';
+import '../../../../core/presentation/helpers/localization_helper.dart';
+import '../../../../core/presentation/routing/app_router.dart';
+import '../../../../core/presentation/styles/styles.dart';
+import '../../../../core/presentation/utils/fp_framework.dart';
+import '../../../../core/presentation/utils/riverpod_framework.dart';
+import '../../../../core/presentation/widgets/loading_widgets.dart';
+import '../../../../core/presentation/widgets/platform_widgets/platform_refresh_indicator.dart';
+import '../../../../core/presentation/widgets/seperated_sliver_child_builder_delegate.dart';
+import '../../domain/value_objects.dart';
+import '../providers/selected_order_provider.dart';
+import '../providers/upcoming_orders_provider.dart';
+import '../providers/update_delivery_status_provider/update_delivery_status_provider.dart';
 import 'card_item_component.dart';
 
 class UpcomingOrdersComponent extends ConsumerWidget {
